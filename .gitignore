@@ -31,3 +31,6 @@
 *.out
 *.app
 btc
+
+# Local environment
+.vscode
