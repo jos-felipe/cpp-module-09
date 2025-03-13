@@ -6,7 +6,7 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:45:22 by josfelip          #+#    #+#             */
-/*   Updated: 2025/03/12 02:56:26 by josfelip         ###   ########.fr       */
+/*   Updated: 2025/03/13 14:03:36 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ bool PmergeMe::parseInput(int argc, char **argv)
         int num;
 
         // Check if argument is a valid positive integer
-        if (!(iss >> num) || num < 0 || iss.peek() != EOF)
+        char remaining;
+        if (!(iss >> num) || num < 0 || iss >> remaining)
             return false;
 
         _vecNumbers.push_back(num);
