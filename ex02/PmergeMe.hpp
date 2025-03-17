@@ -6,7 +6,7 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:30:10 by josfelip          #+#    #+#             */
-/*   Updated: 2025/03/12 02:49:35 by josfelip         ###   ########.fr       */
+/*   Updated: 2025/03/17 19:42:00 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <sstream>
 # include <algorithm>
 # include <iomanip>
+# include <utility>  // For std::pair
 
 class PmergeMe
 {
@@ -29,21 +30,15 @@ private:
     std::vector<int> _vecNumbers;
     std::deque<int> _deqNumbers;
     
-    // Helper methods for vector implementation
-    void mergeSortVector(std::vector<int>& arr);
-    void mergeInsertVector(std::vector<int>& arr, int left, int right);
-    void insertVector(std::vector<int>& arr, int value, int start, int end);
-    
-    // Helper methods for deque implementation
-    void mergeSortDeque(std::deque<int>& arr);
-    void mergeInsertDeque(std::deque<int>& arr, int left, int right);
-    void insertDeque(std::deque<int>& arr, int value, int start, int end);
+    // Ford-Johnson algorithm for each container
+    void sortVector();
+    void sortDeque();
 
 public:
     PmergeMe();
     PmergeMe(const PmergeMe& src);
     ~PmergeMe();
-PmergeMe& operator=(const PmergeMe& rhs);
+    PmergeMe& operator=(const PmergeMe& rhs);
     
     // Parse and validate input
     bool parseInput(int argc, char **argv);
