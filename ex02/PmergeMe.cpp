@@ -6,7 +6,7 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 15:45:22 by josfelip          #+#    #+#             */
-/*   Updated: 2025/03/17 19:41:15 by josfelip         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:50:22 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void PmergeMe::sortVector()
     {
         int value = pairs[i].first;
         int low = 0;
-        int high = i;
+        int high = result.size();
         
         // Binary search to find insertion position
         while (low < high)
@@ -213,7 +213,7 @@ void PmergeMe::sortDeque()
     {
         int value = pairs[i].first;
         int low = 0;
-        int high = i;
+        int high = result.size();
         
         // Binary search to find insertion position
         while (low < high)
